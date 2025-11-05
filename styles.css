@@ -3,475 +3,384 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    background: #d3d3d3;
     padding: 20px;
-    color: #2d3748;
+    min-height: 100vh;
 }
 
-/* Grid контейнер */
-.parent {
+.container { 
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     gap: 2px;
-    height: calc(100vh - 40px);
-    max-width: 1400px;
-    margin: 0 auto;
+    background: #000;
+    border: 2px solid #000;
+    height: 100%;
+    min-height: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-/* Загальні стилі для всіх grid елементів */
-.parent > div {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
+.cell {
+    background: #fff;
     padding: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    border: 1px solid #808080;
+    min-width: 0;
+    overflow: hidden;
 }
 
-.parent > div:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Grid позиціонування */
-.div1 {
-    grid-column: span 4 / span 4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.div2 {
-    grid-row: span 4 / span 4;
-    grid-row-start: 2;
-    grid-column: 1;
-}
-
-.div3 {
-    grid-row: span 2 / span 2;
-    grid-row-start: 2;
-    grid-column: 2;
-}
-
-.div4 {
-    grid-row: span 2 / span 2;
-    grid-row-start: 2;
-    grid-column: 3;
-}
-
-.div5 {
-    grid-row: span 2 / span 2;
-    grid-row-start: 2;
-    grid-column: 4;
-}
-
-.div6 {
-    grid-row: span 2 / span 2;
-    grid-column: 2;
-    grid-row-start: 4;
-}
-
-.div7 {
-    grid-row: span 2 / span 2;
-    grid-column: 3;
-    grid-row-start: 4;
-}
-
-.div8 {
-    grid-column: 4;
-    grid-row-start: 4;
-}
-
-.div9 {
-    grid-column: 4;
-    grid-row-start: 5;
-}
-
-/* Стилі для заголовка */
+/* Header */
 .header {
-    background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
-    color: white;
-    padding: 20px !important;
+    grid-column: 1 / 5;
+    background: #d3d3d3 !important;
+    color: #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: flex-end;
+    padding: 15px !important;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #000;
+    gap: 10px;
 }
 
-.planner-header {
-    width: 100%;
+.header-block {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; /* Відступ 20px від WEEKLY PLAN */
+    align-items: flex-end;
+    position: relative;
+    min-width: 0;
 }
 
-.planner-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin: 0;
+.title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    flex-shrink: 0;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Один ряд для всіх полів */
-.header-fields-single-row {
+.header-label {
+    font-size: clamp(12px, 2vw, 14px);
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-label.with-line {
     display: flex;
-    gap: 40px;
     align-items: center;
-    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
 }
 
-.header-field {
+.line-after-text {
+    flex: 1;
+    height: 1px;
+    background: #000;
+    margin-left: 8px;
+    min-width: 20px;
+}
+
+.improvement-container {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    width: 100%;
+    min-width: 0;
+}
+
+.rocket-container {
+    display: flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.header-checkbox {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #000;
     flex-shrink: 0;
 }
 
-.field-label {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    opacity: 0.9;
-    white-space: nowrap;
-    letter-spacing: 0.5px;
-}
-
-.underline-field {
-    width: 120px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.6);
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.8);
-    margin-top: 2px;
-}
-
-/* Стилі для чекбоксу */
-.header-checkbox-field {
+/* Left Panel */
+.left-panel {
+    grid-row: 2 / 4;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    flex-shrink: 0;
+    height: 100%;
+    border-radius: 0 5px 0 0;
+    min-height: 0;
+    overflow: hidden;
 }
 
-.checkbox-label {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
+.todo-label {
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: bold;
     text-transform: uppercase;
-    opacity: 0.9;
+    text-align: right;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     white-space: nowrap;
-    letter-spacing: 0.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    flex: 1;
+}
+
+.top-goals {
+    margin-bottom: 15px;
+}
+
+.everything-else {
+    margin-bottom: 15px;
+}
+
+.next-week {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 }
 
 .checkbox-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-checkbox {
-    display: none;
-}
-
-.header-custom-checkbox {
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.header-checkbox:checked + .header-custom-checkbox {
-    background: #48bb78;
-    border-color: #48bb78;
-}
-
-.header-checkbox:checked + .header-custom-checkbox::after {
-    content: '✓';
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.header-custom-checkbox:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Стилі для сайдбара */
-.sidebar {
-    background: rgba(255, 255, 255, 0.98) !important;
-    display: flex;
     flex-direction: column;
-    padding: 15px !important;
-    height: 100%;
-    position: relative; /* Для позиціонування TO DO */
-}
-
-.section-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600; /* Такий самий як у day-title */
-    font-size: 1.1rem; /* Такий самий розмір як у day-title */
-    margin: 0;
-    color: #2d3748;
-    text-align: right; /* Вирівнювання праворуч */
-    /* Прибираємо полосу під TO DO */
-    border-bottom: none;
-    padding-bottom: 0;
-    /* Позиціонуємо в правому верхньому куті */
-    align-self: flex-end;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Об'єднана секція */
-.unified-section {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 3px; /* Мінімальний проміжок 3px між секціями */
-    overflow: hidden; /* Прибираємо прокрутку */
-    margin-top: -5px; /* Піднімаємо контент вище */
-}
-
-.subsection {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Рівномірний розподіл висоти */
-.subsection:nth-child(1) { /* TOP 3 GOALS */
-    flex: 1;
-}
-
-.subsection:nth-child(2) { /* EVERYTHING ELSE */
-    flex: 2; /* Більше місця для EVERYTHING ELSE */
-}
-
-.subsection:nth-child(3) { /* NEXT WEEK */
-    flex: 1;
-}
-
-.subsection-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    color: #4a5568;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 8px 0 4px 0; /* Зменшуємо відступи */
-    background: #f7fafc;
-    margin: 0;
-    padding-left: 5px;
-    /* Прибираємо полосу під заголовками */
-    border-bottom: none;
-}
-
-/* Стилі для чекбоксів з підкресленням */
-.checkbox-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1;
-    /* Прибираємо прокрутку */
-    overflow: hidden;
+    justify-content: space-around;
     min-height: 0;
-    padding: 8px 5px; /* Зменшуємо відступи */
 }
 
-.checkbox-item {
+.checkbox-line {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 0;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    margin-bottom: 12px;
+    min-width: 0;
+    flex-shrink: 0;
 }
 
-.checkbox-item:hover {
-    background: #f7fafc;
-    border-radius: 4px;
-    padding: 4px 6px;
+.top-goals .checkbox-line {
+    margin-bottom: 20px;
 }
 
-.task-checkbox {
-    display: none;
+.everything-else .checkbox-line {
+    margin-bottom: 10px;
 }
 
-.custom-checkbox {
+.next-week .checkbox-line {
+    margin-bottom: 20px;
+}
+
+.checkbox {
     width: 16px;
     height: 16px;
-    border: 2px solid #cbd5e0;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
+    margin-right: 8px;
+    border: 2px solid #000;
     flex-shrink: 0;
-    cursor: pointer;
 }
 
-.task-checkbox:checked + .custom-checkbox {
-    background: #48bb78;
-    border-color: #48bb78;
+.line {
+    flex: 1;
+    height: 1px;
+    background: #000;
+    margin-left: 8px;
+    min-width: 20px;
 }
 
-.task-checkbox:checked + .custom-checkbox::after {
-    content: '✓';
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-}
-
-/* Стилі для блоків днів тижня */
-.day-card {
-    background: rgba(255, 255, 255, 0.98) !important;
+/* Day Columns */
+.day-column {
     display: flex;
     flex-direction: column;
-    padding: 15px !important;
-    justify-content: flex-start;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.day-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    min-width: 0;
 }
 
 .day-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: 0;
-    color: #2d3748;
-    text-align: center;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    align-self: flex-start;
+    text-align: center;
+    padding-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     width: 100%;
 }
 
-/* Базова адаптивність */
-@media (max-width: 1200px) {
-    .parent {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 2px;
-    }
-    
-    .div1 { grid-column: span 3; }
-    .div2 { grid-row: span 2; grid-row-start: 2; grid-column: 1; }
-    .div3, .div4, .div5 { grid-row: span 1; }
-    .div6, .div7 { grid-row-start: 4; }
-    .div8, .div9 { grid-column-start: auto; grid-row-start: auto; }
-    
-    .header-fields-single-row {
-        gap: 25px;
-    }
-    
-    .underline-field {
-        width: 100px;
-    }
+.day-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    position: absolute;
+    right: 0;
+    flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
-    .planner-header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* Grid positioning for days with specific border radius */
+.monday { grid-column: 2; grid-row: 2; border-radius: 6px 6px 0 0; }
+.tuesday { grid-column: 3; grid-row: 2; border-radius: 6px 6px 0 0; }
+.wednesday { grid-column: 4; grid-row: 2; border-radius: 5px 0 0 0; }
+.thursday { grid-column: 2; grid-row: 3; border-radius: 5px 5px 0 0; }
+.friday { grid-column: 3; grid-row: 3; border-radius: 5px 5px 0 0; }
+
+/* Saturday/Sunday split */
+.saturday-sunday {
+    grid-column: 4;
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    padding: 0;
+    background: #000;
+    border-radius: 5px 0 0 0;
+    min-height: 0;
+}
+
+.saturday, .sunday {
+    background: #fff;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.saturday {
+    border-radius: 5px 0 0 0;
+}
+
+.sunday {
+    border-radius: 0 0 0 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    body {
+        padding: 15px;
     }
     
-    .header-fields-single-row {
-        gap: 20px;
+    .container {
+        grid-template-rows: auto 1fr 1fr;
     }
     
-    .underline-field {
-        width: 80px;
+    .header {
+        padding: 12px !important;
+        gap: 8px;
+    }
+    
+    .cell {
+        padding: 12px;
+    }
+    
+    .checkbox-line {
+        margin-bottom: 10px;
+    }
+    
+    .top-goals .checkbox-line {
+        margin-bottom: 15px;
+    }
+    
+    .next-week .checkbox-line {
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .parent {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 2px;
-        height: auto;
+        grid-template-rows: auto auto 1fr;
+        gap: 1px;
     }
     
-    .parent > div {
-        grid-column: 1 !important;
-        grid-row: auto !important;
+    .header {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 10px !important;
     }
     
-    .planner-title {
-        font-size: 2rem;
-    }
-    
-    .header-fields-single-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .underline-field {
-        width: 150px;
-    }
-    
-    .day-title {
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 1rem;
+    .header-block {
+        justify-content: center;
         text-align: center;
     }
-}
-
-@media (max-width: 480px) {
-    .parent {
-        gap: 2px;
+    
+    .improvement-container {
+        align-items: center;
     }
     
-    .planner-title {
-        font-size: 1.8rem;
+    .left-panel {
+        grid-row: 2;
+        grid-column: 1;
     }
     
-    .section-title {
-        font-size: 0.9rem;
+    .monday, .tuesday, .wednesday, .thursday, .friday, .saturday-sunday {
+        grid-column: 1;
+        grid-row: auto;
     }
     
-    .day-title {
-        font-size: 0.9rem;
+    .saturday-sunday {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
     
-    .field-label,
-    .checkbox-label {
-        font-size: 0.8rem;
+    .cell {
+        padding: 10px;
     }
-}
-
-/* Анімації */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
+    
+    .checkbox-line {
+        margin-bottom: 8px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .top-goals .checkbox-line {
+        margin-bottom: 12px;
     }
-}
-
-.parent > div {
-    animation: fadeIn 0.3s ease-out;
+    
+    .next-week .checkbox-line {
+        margin-bottom: 12px;
+    }
 }
