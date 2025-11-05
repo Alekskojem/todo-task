@@ -8,161 +8,210 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="parent">
-    <!-- Header -->
-<div class="div1 header">
-    <div class="planner-header">
-        <h1 class="planner-title">WEEKLY PLAN</h1>
-        <div class="header-fields-single-row">
-            <div class="header-field">
-                <span class="field-label">WEEK OF</span>
-                <div class="underline-field"></div>
+    <div class="container">
+        <!-- Header -->
+        <div class="header cell">
+            <!-- Перший блок - WEEKLY PLAN -->
+            <div class="header-block">
+                <div class="title">WEEKLY PLAN</div>
             </div>
-            <div class="header-field">
-                <span class="field-label">HEALTHY HABIT</span>
-                <div class="underline-field"></div>
+            
+            <!-- Другий блок - WEEK OF -->
+            <div class="header-block">
+                <div class="header-label with-line">
+                    WEEK OF
+                    <div class="line-after-text"></div>
+                </div>
             </div>
-            <div class="header-checkbox-field">
-                <span class="checkbox-label">ROOM FOR IMPROVEMENT</span>
-                <div class="checkbox-container">
-                    <input type="checkbox" class="header-checkbox">
-                    <span class="header-custom-checkbox"></span>
+            
+            <!-- Третій блок - HEALTHY HABIT -->
+            <div class="header-block">
+                <div class="header-label with-line">
+                    HEALTHY HABIT
+                    <div class="line-after-text"></div>
+                </div>
+            </div>
+            
+            <!-- Четвертий блок - ROCKET IT ROOM FOR IMPROVEMENT -->
+            <div class="header-block">
+                <div class="improvement-container">
+                    <div class="rocket-container">
+                        <div class="header-label">ROCKET IT</div>
+                        <input type="checkbox" class="header-checkbox">
+                    </div>
+                    <div class="rocket-container">
+                        <div class="header-label">ROOM FOR IMPROVEMENT</div>
+                        <input type="checkbox" class="header-checkbox">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-       <!-- Combined Left Sidebar - TO DO -->
-<div class="div2 sidebar">
-    <h2 class="section-title">TO DO</h2>
-    
-    <div class="unified-section">
-        <!-- TOP 3 GOALS -->
-        <div class="subsection">
-            <h3 class="subsection-title">TOP 3 GOALS</h3>
-            <div class="checkbox-list">
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
+
+        <!-- Left Panel -->
+        <div class="left-panel cell">
+            <!-- TO DO Label -->
+            <div class="todo-label">TO DO</div>
+
+            <!-- TOP 3 GOALS -->
+            <div class="section top-goals">
+                <div class="section-title">TOP 3 GOALS</div>
+                <div class="checkbox-container">
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVERYTHING ELSE -->
+            <div class="section everything-else">
+                <div class="section-title">EVERYTHING ELSE</div>
+                <div class="checkbox-container">
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEXT WEEK -->
+            <div class="section next-week">
+                <div class="section-title">NEXT WEEK</div>
+                <div class="checkbox-container">
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                    <div class="checkbox-line">
+                        <input type="checkbox" class="checkbox">
+                        <div class="line"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- EVERYTHING ELSE (9 чекбоксів замість 10) -->
-        <div class="subsection">
-            <h3 class="subsection-title">EVERYTHING ELSE</h3>
-            <div class="checkbox-list">
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
+        <!-- Central days blocks -->
+        <div class="day-column cell monday">
+            <div class="day-header">
+                <div class="day-title">MONDAY</div>
+                <input type="checkbox" class="day-checkbox">
+            </div>
+            <div class="content-area">
+                <!-- Контент -->
             </div>
         </div>
 
-        <!-- NEXT WEEK (3 чекбокси замість 4) -->
-        <div class="subsection">
-            <h3 class="subsection-title">NEXT WEEK</h3>
-            <div class="checkbox-list">
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <span class="custom-checkbox"></span>
-                    <div class="underline-field wide"></div>
-                </label>
+        <div class="day-column cell tuesday">
+            <div class="day-header">
+                <div class="day-title">TUESDAY</div>
+                <input type="checkbox" class="day-checkbox">
+            </div>
+            <div class="content-area">
+                <!-- Контент -->
             </div>
         </div>
-    </div>
-</div>
-        
-<!-- Right side blocks -->
-<div class="div3 day-card">
-    <h3 class="day-title">MONDAY</h3>
-</div>
 
-<div class="div4 day-card">
-    <h3 class="day-title">TUESDAY</h3>
-</div>
+        <div class="day-column cell wednesday">
+            <div class="day-header">
+                <div class="day-title">WEDNESDAY</div>
+                <input type="checkbox" class="day-checkbox">
+            </div>
+            <div class="content-area">
+                <!-- Контент -->
+            </div>
+        </div>
 
-<div class="div5 day-card">
-    <h3 class="day-title">WEDNESDAY</h3>
-</div>
+        <div class="day-column cell thursday">
+            <div class="day-header">
+                <div class="day-title">THURSDAY</div>
+                <input type="checkbox" class="day-checkbox">
+            </div>
+            <div class="content-area">
+                <!-- Контент -->
+            </div>
+        </div>
 
-<div class="div6 day-card">
-    <h3 class="day-title">THURSDAY</h3>
-</div>
+        <div class="day-column cell friday">
+            <div class="day-header">
+                <div class="day-title">FRIDAY</div>
+                <input type="checkbox" class="day-checkbox">
+            </div>
+            <div class="content-area">
+                <!-- Контент -->
+            </div>
+        </div>
 
-<div class="div7 day-card">
-    <h3 class="day-title">FRIDAY</h3>
-</div>
-
-<div class="div8 day-card">
-    <h3 class="day-title">SATURDAY</h3>
-</div>
-
-<div class="div9 day-card">
-    <h3 class="day-title">SUNDAY</h3>
-</div>
+        <div class="saturday-sunday cell">
+            <div class="saturday">
+                <div class="day-header">
+                    <div class="day-title">SATURDAY</div>
+                    <input type="checkbox" class="day-checkbox">
+                </div>
+                <div class="content-area">
+                    <!-- Кнтент -->
+                </div>
+            </div>
+            <div class="sunday">
+                <div class="day-header">
+                    <div class="day-title">SUNDAY</div>
+                    <input type="checkbox" class="day-checkbox">
+                </div>
+                <div class="content-area">
+                    <!-- Контент-->
+                </div>
+            </div>
         </div>
     </div>
 </body>
