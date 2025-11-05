@@ -1,4 +1,3 @@
-/* Кастомні шрифти */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-.container { 
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
@@ -259,11 +258,11 @@ body {
 }
 
 /* Grid positioning for days with specific border radius */
-.monday { grid-column: 2; grid-row: 2; border-radius: 6px 6px 0 0; }
-.tuesday { grid-column: 3; grid-row: 2; border-radius: 6px 6px 0 0; }
-.wednesday { grid-column: 4; grid-row: 2; border-radius: 6px 0 0 0; }
-.thursday { grid-column: 2; grid-row: 3; border-radius: 6px 6px 0 0; }
-.friday { grid-column: 3; grid-row: 3; border-radius: 6px 6px 0 0; }
+.monday { grid-column: 2; grid-row: 2; border-radius: 5px 5px 0 0; }
+.tuesday { grid-column: 3; grid-row: 2; border-radius: 5px 5px 0 0; }
+.wednesday { grid-column: 4; grid-row: 2; border-radius: 5px 0 0 0; }
+.thursday { grid-column: 2; grid-row: 3; border-radius: 5px 5px 0 0; }
+.friday { grid-column: 3; grid-row: 3; border-radius: 5px 5px 0 0; }
 
 /* Saturday/Sunday split */
 .saturday-sunday {
@@ -294,6 +293,132 @@ body {
     border-radius: 0 0 0 0;
 }
 
+/* Editable content styles */
+.editable-line {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 2px 5px;
+    margin: 2px 0;
+    min-height: 20px;
+    resize: none;
+    overflow: hidden;
+}
+
+.editable-line:focus {
+    background: #f0f0f0;
+}
+
+.day-content-editable {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content-line-editable {
+    display: flex;
+    align-items: center;
+    min-height: 25px;
+}
+
+.line-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-bottom: 1px dashed #ccc;
+    min-height: 20px;
+    resize: none;
+    overflow: hidden;
+}
+
+.line-input:focus {
+    border-bottom: 1px solid #000;
+    background: #f9f9f9;
+}
+
+.left-panel-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-bottom: 1px dashed #ccc;
+    min-height: 18px;
+    resize: none;
+    overflow: hidden;
+}
+
+.left-panel-input:focus {
+    border-bottom: 1px solid #000;
+    background: #f9f9f9;
+}
+
+.checkbox-line-editable {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+.top-goals .checkbox-line-editable {
+    margin-bottom: 20px;
+}
+
+.everything-else .checkbox-line-editable {
+    margin-bottom: 10px;
+}
+
+.next-week .checkbox-line-editable {
+    margin-bottom: 20px;
+}
+
+.header-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 2px 5px;
+    margin-left: 5px;
+    border-bottom: 1px dashed #000;
+    color: #000;
+    min-width: 100px;
+    text-align: center;
+}
+
+.header-input:focus {
+    border-bottom: 1px solid #000;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.header-input-week {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 2px 5px;
+    margin-left: 8px;
+    border-bottom: 1px dashed #000;
+    color: #000;
+    min-width: 50px;
+    resize: none;
+    overflow: hidden;
+}
+
+.header-input-week:focus {
+    border-bottom: 1px solid #000;
+    background: rgba(255, 255, 255, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     body {
@@ -313,16 +438,21 @@ body {
         padding: 12px;
     }
     
-    .checkbox-line {
+    .checkbox-line, .checkbox-line-editable {
         margin-bottom: 10px;
     }
     
-    .top-goals .checkbox-line {
+    .top-goals .checkbox-line, .top-goals .checkbox-line-editable {
         margin-bottom: 15px;
     }
     
-    .next-week .checkbox-line {
+    .next-week .checkbox-line, .next-week .checkbox-line-editable {
         margin-bottom: 15px;
+    }
+    
+    .line-input, .left-panel-input, .header-input-week {
+        font-size: 13px;
+        padding: 3px 6px;
     }
 }
 
@@ -372,15 +502,107 @@ body {
         padding: 10px;
     }
     
-    .checkbox-line {
+    .checkbox-line, .checkbox-line-editable {
         margin-bottom: 8px;
     }
     
-    .top-goals .checkbox-line {
+    .top-goals .checkbox-line, .top-goals .checkbox-line-editable {
         margin-bottom: 12px;
     }
     
-    .next-week .checkbox-line {
+    .next-week .checkbox-line, .next-week .checkbox-line-editable {
         margin-bottom: 12px;
+    }
+    
+    .line-input, .left-panel-input, .header-input-week {
+        font-size: 12px;
+        padding: 2px 4px;
+        min-height: 16px;
+    }
+    
+    .todo-label {
+        margin-bottom: 15px;
+    }
+    
+    .section-title {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .cell {
+        padding: 8px;
+    }
+    
+    .header {
+        padding: 8px !important;
+    }
+    
+    .todo-label {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .section-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .checkbox-line, .checkbox-line-editable {
+        margin-bottom: 6px;
+    }
+    
+    .top-goals .checkbox-line, .top-goals .checkbox-line-editable {
+        margin-bottom: 10px;
+    }
+    
+    .next-week .checkbox-line, .next-week .checkbox-line-editable {
+        margin-bottom: 10px;
+    }
+    
+    .line-input, .left-panel-input, .header-input-week {
+        font-size: 11px;
+        padding: 1px 3px;
+        min-height: 14px;
+    }
+    
+    .day-title {
+        font-size: 18px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        border: 1px solid #000;
+        background: #000;
+    }
+    
+    .cell {
+        background: white;
+        border: 1px solid #000;
+    }
+    
+    .header {
+        background: #f0f0f0 !important;
+    }
+    
+    .line-input, .left-panel-input, .header-input-week {
+        border-bottom: 1px solid #000;
+        background: transparent;
+    }
+    
+    .line-input:focus, .left-panel-input:focus, .header-input-week:focus {
+        border-bottom: 1px solid #000;
+        background: transparent;
     }
 }
