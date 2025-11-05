@@ -261,9 +261,9 @@ body {
 /* Grid positioning for days with specific border radius */
 .monday { grid-column: 2; grid-row: 2; border-radius: 6px 6px 0 0; }
 .tuesday { grid-column: 3; grid-row: 2; border-radius: 6px 6px 0 0; }
-.wednesday { grid-column: 4; grid-row: 2; border-radius: 5px 0 0 0; }
-.thursday { grid-column: 2; grid-row: 3; border-radius: 5px 5px 0 0; }
-.friday { grid-column: 3; grid-row: 3; border-radius: 5px 5px 0 0; }
+.wednesday { grid-column: 4; grid-row: 2; border-radius: 6px 0 0 0; }
+.thursday { grid-column: 2; grid-row: 3; border-radius: 6px 6px 0 0; }
+.friday { grid-column: 3; grid-row: 3; border-radius: 6px 6px 0 0; }
 
 /* Saturday/Sunday split */
 .saturday-sunday {
